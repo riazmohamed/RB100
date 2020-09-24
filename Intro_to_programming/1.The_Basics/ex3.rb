@@ -9,3 +9,17 @@ movies = {
 }
 
 movies.each { |movie, year| puts year }
+
+# alternative syntax for the same
+puts "-----------------------------------------"
+puts "-----------------------------------------"
+puts "-----------------------------------------"
+
+films = Hash.new
+films[:first] = 1975
+films[:second] = 2004
+films[:third] = 2013
+films[:fourth] = 2001
+films[:fifth] = 1981
+
+films.each { |film, year| puts year }
