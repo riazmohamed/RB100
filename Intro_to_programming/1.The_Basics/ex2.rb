@@ -30,5 +30,5 @@ case user_place_input
   when "one"
     puts "The ones place is #{ones}"
   else
-    puts "Please enter a valid number!!!"
+    puts "Please enter a valid place!!!"
 end
