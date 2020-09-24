@@ -1,13 +1,16 @@
 # ex5.rb factorial!
 
-puts "Please inputs a number from 5 to 8."
-user_input = gets.chomp
-number = user_input.to_i
-
-counter = 1
-until number <= 0
-  counter *= number
-  number -= 1
+def numbers(number)
+  num = number
+  counter = 1
+  until num <= 0
+    counter *= num
+    num -= 1
+  end
+  "The factorial value for the number #{number} = #{counter}."
 end
 
-puts "The factorial value for the number #{user_input} = #{counter}."
+puts numbers(5)
+puts numbers(6)
+puts numbers(7)
+puts numbers(8)
