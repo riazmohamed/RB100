@@ -3,3 +3,4 @@ def capitals(words)
 end
 
 puts capitals("Helloooooooooooooooo")
+puts capitals("Hello")
