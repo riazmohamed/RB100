@@ -1,4 +1,4 @@
-puts "Please enter a valid integer: "
+puts "Please enter a valid integer between 0 and 100: "
 number = gets.chomp.to_i
 
 answer = case
