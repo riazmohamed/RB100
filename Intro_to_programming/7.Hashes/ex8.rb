@@ -3,8 +3,7 @@ words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
           'flow', 'neon']
 
 new_hsh = Hash.new
-split_word = ""
-hash_key = ""
+
 words.each do |ele|
   word = ele.split("").sort.join("")
   if
