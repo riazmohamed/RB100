@@ -16,3 +16,5 @@ contact_data.each do |arr|
 end
 
 p contacts
+p contacts["Joe Smith"][:email]
+p contacts["Sally Johnson"][:phone]
