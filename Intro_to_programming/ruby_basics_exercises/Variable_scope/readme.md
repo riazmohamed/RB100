@@ -50,3 +50,23 @@ puts a
 - The scope of variables for a method invocation with a block is different from that of the method definition.
 - Method definition restrict the visibility of the variables based on where they are initialized.
 - Method invocation with a block on the other hand are more open with the local variable scope.
+
+## 8. What's My Value? (Part 8)
+```ruby
+array = [1, 2, 3]
+
+array.each do |element|
+  a = element
+end
+
+puts a
+# => undefined local variable or method `a' for main:Object (NameError)
+```
+### Error: undefined local variable or method `a' for main:Object (NameError)
+
+- An array `[1, 2, 3]` is initialized and is assigned to the local variable named `array`.
+- `Array#each` method is called on the `array` and a block is passed to it.
+- For every iteration the `each` method assigns the element to the block parameter `element`.
+- within the body of the block we are trying to initiate a variable `a` which is local in scope to the block in which it is initiated and we are trying to assign the element current to `a`.
+- Since this is an initiation and not an assignment the local variable `a` is not visible outside of the scope of the block.
+- Hence when we try to output the value of `a` outside of the scope of the block Ruby raises an exception.
