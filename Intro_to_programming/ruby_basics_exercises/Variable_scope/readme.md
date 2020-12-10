@@ -72,7 +72,8 @@ puts a
 - Since this is an initiation and not an assignment the local variable `a` is not visible outside of the scope of the block.
 - Hence when we try to output the value of `a` outside of the scope of the block Ruby raises an exception.
 
-## 9. What's My Value? (Part 9) - Variable Shadowing
+## 9. What's My Value? (Part 9) - Variable Shadowing
+
 ```ruby
 a = 7
 array = [1, 2, 3]
