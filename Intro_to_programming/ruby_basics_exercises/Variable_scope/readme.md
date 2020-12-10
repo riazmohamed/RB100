@@ -1,6 +1,6 @@
 # Variable Scope - Explanation through practise problems
 
-What is my value? (Part 6)
+## 6. What is my value? (Part 6)
 
 ```ruby
 a = 7
