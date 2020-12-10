@@ -21,3 +21,26 @@ When we invoke the method `my_value` and pass the value referenced by `a` as an 
 - Methods are completely self contained and the variable initialised within it are not visible outside of it.
 - The variables initialized outside of the methods are not visible within the method definition.
 - However local variables initialized in the outer scope will be visible within `blocks, procs and lambdas`.
+
+## 7. What's My Value? (Part 7)
+
+```ruby
+a = 7
+array = [1, 2, 3]
+
+array.each do |element|
+  a = element
+end
+
+puts a
+```
+
+### Output value: 3
+
+- line 1. Initialize a local variable `a` and set it to point to the Integer `7`.
+- line 2. Initialize an array `[1, 2, 3]` and set it to the local variable `array`
+- line 4. Call the iterator method `Array#each` on the array `array`. `Array#each` method takes a block.
+- line 5. For each iteration the variable `a` is reassigned to `element`.
+- Finally `a` gets reassigned to `3`. Which will be the last element in the `array`.
+**Note**: The local variable `a` is visible within the `Array#each` method's block although it is initialized before this.
+- line 8. Outputs the value of `a` as `3`.
