@@ -104,3 +104,8 @@ puts
 # => undefined method `+' for nil:NilClass (NoMethodError)
 ```
 This will raise an exception when we invoke the method `my_value` and pass `array` as an argument to it. Within the actual method definition of the method `my_value` we are calling the each method on the method parameter `ary` which now references to the array `[1, 2, 3]`. For each iteration the value is then assigned to the block parameter `b`. In line 6 the block tries to execute the expression `a += b`. This will raise an exception since the method does not recognise its undefined local variable `a`. This is because the local variables initiated outside of the method definition is not visible within its scope. Hence we get a `NoMethodError`.
+
+### Addition Points
+
+- method definitions are self-contained with respect to local variables.
+- Since the outer a is not visible inside the my_value method definition, it isn't visible inside the method invocation with a block.
