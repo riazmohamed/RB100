@@ -62,7 +62,8 @@ end
 puts a
 # => undefined local variable or method `a' for main:Object (NameError)
 ```
-### Error: undefined local variable or method `a' for main:Object (NameError)
+
+### Error: undefined local variable or method 'a' for main:Object (NameError)
 
 - An array `[1, 2, 3]` is initialized and is assigned to the local variable named `array`.
 - `Array#each` method is called on the `array` and a block is passed to it.
@@ -70,3 +71,19 @@ puts a
 - within the body of the block we are trying to initiate a variable `a` which is local in scope to the block in which it is initiated and we are trying to assign the element current to `a`.
 - Since this is an initiation and not an assignment the local variable `a` is not visible outside of the scope of the block.
 - Hence when we try to output the value of `a` outside of the scope of the block Ruby raises an exception.
+
+## 9. What's My Value? (Part 9) - Variable Shadowing
+```ruby
+a = 7
+array = [1, 2, 3]
+
+array.each { |a| a += 1 }
+puts a
+# => 7
+```
+### Definition of *Shadowing*
+- *When a block argument hides a local variable that is defined in the outer scope of the block, __shadowing__ occurs. This can be resolved by using unique variable/parameter names*
+
+1. The Array#each method when called on the array `[1, 2, 3]` assigns the element from the current iteration to the block parameter `a`.
+2. Hence while executing 'a += 1'. The block looks for the value for `a` and finds it. Hence it does not entertain looking for the value of `a` outside the local scope of the method. This is known as *shadowing*.
+3. Therefore when we output the value of `a`. The original value referenced by 'a' i.e. `7` is output. This was the original value initialised outside of the each method.
