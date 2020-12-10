@@ -33,6 +33,7 @@ array.each do |element|
 end
 
 puts a
+#=> 3
 ```
 
 ### Output value: 3
