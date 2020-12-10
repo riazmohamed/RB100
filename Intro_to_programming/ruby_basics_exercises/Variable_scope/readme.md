@@ -88,3 +88,19 @@ puts a
 1. The Array#each method when called on the array `[1, 2, 3]` assigns the element from the current iteration to the block parameter `a`.
 2. Hence while executing `a += 1`. The block looks for the value for `a` and finds it. Hence it does not entertain looking for the value of `a` outside the local scope of the method. This is known as *shadowing*.
 3. Therefore when we output the value of `a`. The original value referenced by 'a' i.e. `7` is output. This was the original value initialised outside of the each method.
+
+## 10. What's My Value? (Part 10)
+```ruby
+a = 7
+array = [1, 2, 3]
+
+def my_value(ary)
+  ary.each { |b| a += b }
+end
+
+my_value(array)
+puts
+
+# => undefined method `+' for nil:NilClass (NoMethodError)
+```
+This will raise an exception when we invoke the method `my_value` and pass `array` as an argument to it. Within the actual method definition of the method `my_value` we are calling the each method on the method parameter `ary` which now references to the array `[1, 2, 3]`. For each iteration the value is then assigned to the block parameter `b`. In line 6 the block tries to execute the expression `a += b`. This will raise an exception since the method does not recognise its undefined local variable `a`. This is because the local variables initiated outside of the method definition is not visible within its scope. Hence we get a `NoMethodError`.
