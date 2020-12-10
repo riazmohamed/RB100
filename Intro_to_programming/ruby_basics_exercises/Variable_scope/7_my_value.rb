@@ -6,3 +6,4 @@ array.each do |element|
 end
 
 puts a
+#=> 3

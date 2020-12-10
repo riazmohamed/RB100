@@ -42,5 +42,10 @@ puts a
 - line 4. Call the iterator method `Array#each` on the array `array`. `Array#each` method takes a block.
 - line 5. For each iteration the variable `a` is reassigned to `element`.
 - Finally `a` gets reassigned to `3`. Which will be the last element in the `array`.
-**Note**: The local variable `a` is visible within the `Array#each` method's block although it is initialized before this.
+- **Note**: The local variable `a` is visible within the `Array#each` method's block although it is initialized before this.
 - line 8. Outputs the value of `a` as `3`.
+
+### Added Points
+- The scope of variables for a method invocation with a block is different from that of the method definition.
+- Method definition restrict the visibility of the variables based on where they are initialized.
+- Method invocation with a block on the other hand are more open with the local variable scope.
