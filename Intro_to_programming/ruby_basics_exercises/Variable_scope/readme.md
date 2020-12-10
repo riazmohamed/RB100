@@ -82,8 +82,8 @@ puts a
 # => 7
 ```
 ### Definition of *Shadowing*
-- *When a block argument hides a local variable that is defined in the outer scope of the block, __shadowing__ occurs. This can be resolved by using unique variable/parameter names*
+- *When a block argument hides a local variable that is defined in the outer scope of the block, __shadowing__ occurs. This can be resolved by using __unique variable/parameter names__*
 
 1. The Array#each method when called on the array `[1, 2, 3]` assigns the element from the current iteration to the block parameter `a`.
-2. Hence while executing 'a += 1'. The block looks for the value for `a` and finds it. Hence it does not entertain looking for the value of `a` outside the local scope of the method. This is known as *shadowing*.
+2. Hence while executing `a += 1`. The block looks for the value for `a` and finds it. Hence it does not entertain looking for the value of `a` outside the local scope of the method. This is known as *shadowing*.
 3. Therefore when we output the value of `a`. The original value referenced by 'a' i.e. `7` is output. This was the original value initialised outside of the each method.
