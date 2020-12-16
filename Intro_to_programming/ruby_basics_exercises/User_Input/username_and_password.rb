@@ -7,10 +7,8 @@ loop do
   puts '>> Please enter your password:'
   password_input = gets.chomp
 
-  if name_input == USER_NAME && password_input == PASSWORD
-    puts 'Welcome!'
-    break
-  else
-    puts '>> Authorization failed!'
-  end
+  break if name_input == USER_NAME && password_input == PASSWORD
+  puts '>> Authorization failed!'
 end
+
+puts 'Welcome!'
